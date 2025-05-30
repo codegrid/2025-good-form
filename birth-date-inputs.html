@@ -45,21 +45,7 @@
   <input id="submit" type="submit" value="送信">
 </form>
 
-
-<script>
-document.getElementById("form").addEventListener("submit", function(e) {
-  e.preventDefault(); // 実際の送信を防止
-
-  const year = document.getElementById("year").value;
-  const month = document.getElementById("month").value;
-  const day = document.getElementById("day").value;
-
-  alert("入力内容:\n" +
-        "生年: " + year + "\n" +
-        "生月: " + month + "\n" +
-        "生日: " + day);
-  });
-</script>
+<script src="./form.js"></script>
 
 </body>
 </html>

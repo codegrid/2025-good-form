@@ -51,7 +51,8 @@ function validatePasswords() {
     errorMessage.textContent = 'パスワードが一致しません。';
     return false;
   }
-  return true;
+  alert("パスワードが一致しました。");
+  return false; // フォーム送信を防ぐ
 }
 </script>
 
