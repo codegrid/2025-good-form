@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <style>
+    input.card-input {
+      width: 60px;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<form id="cardForm" onsubmit="return validateCardNumber()">
+  <label>クレジットカード番号：</label><br>
+  <input type="text" maxlength="4" class="card-input" id="card1" pattern="\d{4}" required>
+  <input type="text" maxlength="4" class="card-input" id="card2" pattern="\d{4}" required>
+  <input type="text" maxlength="4" class="card-input" id="card3" pattern="\d{4}" required>
+  <input type="text" maxlength="4" class="card-input" id="card4" pattern="\d{4}" required><br><br>
+  
+  <input type="submit" value="送信">
+</form>
+
+<script>
+// フォーカス自動移動
+const inputs = document.querySelectorAll('.card-input');
+// カード番号を検証（例：すべて数字で16桁あるか）
+function validateCardNumber() {
+  const value = Array.from(inputs).map(i => i.value).join('');
+  if (!/^\d{16}$/.test(value)) {
+    alert('カード番号は16桁の数字を入力してください。');
+    return false;
+  }
+  return true;
+}
+</script>
+
+</body>
+</html>

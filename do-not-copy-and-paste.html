@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <style>
+    input {
+      margin-bottom: 10px;
+      display: block;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<form id="passwordForm" onsubmit="return validatePasswords()">
+  <label for="password">パスワード：</label>
+  <input type="password" id="password" name="password" required>
+
+  <label for="confirm">パスワード（確認）：</label>
+  <input type="password" id="confirm" name="confirm" required>
+
+  <span class="error" id="errorMessage"></span><br>
+
+  <input type="submit" value="登録">
+</form>
+
+<script>
+// 貼り付けを禁止
+const passwordFields = [document.getElementById('password'), document.getElementById('confirm')];
+passwordFields.forEach(field => {
+  field.addEventListener('paste', function(e) {
+    e.preventDefault();
+    alert("コピペは禁止されています。手入力してください。");
+  });
+  field.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+});
+
+// パスワード一致の確認
+function validatePasswords() {
+  const pw = document.getElementById('password').value;
+  const confirm = document.getElementById('confirm').value;
+  const errorMessage = document.getElementById('errorMessage');
+
+  if (pw !== confirm) {
+    errorMessage.textContent = 'パスワードが一致しません。';
+    return false;
+  }
+  return true;
+}
+</script>
+
+</body>
+</html>

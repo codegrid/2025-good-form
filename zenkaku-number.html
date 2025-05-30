@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+</head>
+<body>
+
+<form>
+  <label for="address">住所：</label><br>
+  <input
+    type="text"
+    id="address"
+    name="address"
+    pattern="^[０-９ー－－ー－\u3000-\u30FF\u4E00-\u9FAF]+$"
+    title="数字はすべて全角で入力してください"
+    required
+  >
+  <br>
+  <small>例：１００－０００１　東京都千代田区千代田１－１</small><br><br>
+  <input type="submit" value="送信">
+</form>
+
+
+</body>
+</html>
