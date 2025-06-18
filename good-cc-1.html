@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <style>
+    form {
+      display: grid;
+      grid-template-columns: [label] auto [input] 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    label {
+      grid-column: label;
+      font-weight: bold;
+    }
+    input {
+      grid-column: input;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<form>
+
+  <!-- カード番号 -->
+  <label for="cc-number">カード番号</label>
+  <input
+    type="text"
+    id="cc-number"
+    name="cc-number"
+    inputmode="numeric"
+    autocomplete="cc-number"
+  />
+
+  <!-- カード名義（氏名フル） -->
+  <label for="cc-name">カード名義</label>
+  <input
+    type="text"
+    id="cc-name"
+    name="cc-name"
+    autocomplete="cc-name"
+  />
+
+  <!-- 有効期限 -->
+  <label for="cc-exp">有効期限</label>
+  <input
+    type="month"
+    id="cc-exp"
+    name="cc-exp"
+    autocomplete="cc-exp"
+  />
+
+  <!-- セキュリティコード -->
+  <label for="cc-csc">セキュリティコード</label>
+  <input
+    type="text"
+    id="cc-csc"
+    name="cc-csc"
+    inputmode="numeric"
+    maxlength="4"
+    autocomplete="cc-csc"
+  />
+
+  <!-- メールアドレス -->
+  <label for="email">メールアドレス</label>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    autocomplete="email"
+  />
+
+    <!-- 電話番号 -->
+  <label for="tel">電話番号</label>
+  <input
+    type="tel"
+    id="tel"
+    name="tel"
+    inputmode="tel"
+    autocomplete="tel-national"
+  />
+
+
+  <button>送信</button>
+</form>
+
+<script src="./form.js"></script>
+
+</body>
+</html>

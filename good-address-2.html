@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.6rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .note {
+      font-size: 0.9rem;
+      color: #555;
+      margin-block: 0;
+    }
+  </style>
+</head>
+<body>
+
+<form>
+
+  <label for="address">住所（全角英数記号のみ）</label>
+  <input type="text" id="address" name="address">
+  <p class="note">例：東京都千代田区千代田１－１</p>
+  <p class="note">※ 半角英数記号文字は自動的に全角英数記号に変換されます。</p>
+
+  <input type="submit" value="送信">
+</form>
+
+<script src="./form.js"></script>
+<script>
+const addressInput = document.getElementById('address');
+
+// フォーカスが外れたタイミングで全角変換を実行
+addressInput.addEventListener('blur', () => {
+  addressInput.value = toZenkaku(addressInput.value); // 全角に変換
+});
+
+// 半角英数字や記号、スペースを全角に変換する関数
+function toZenkaku(str) {
+  return str.replace(/[A-Za-z0-9!-/:-@¥[-`{-~]/g, function(s) {
+    return String.fromCharCode(s.charCodeAt(0) + 0xFEE0);
+  }).replace(/ /g, "　"); // 半角スペース→全角スペース
+}
+</script>
+
+</body>
+</html>

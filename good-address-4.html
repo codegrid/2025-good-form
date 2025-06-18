@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <style>
+    fieldset {
+      display: grid;
+      grid-template-columns: [label] auto [input] 1fr;
+      gap: 10px;
+    }
+    label {
+      grid-column: label;
+      font-weight: bold;
+    }
+    input[type="text"] {
+      grid-column: input;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<form>
+
+  <!-- 配送先住所 -->
+  <fieldset>
+    <legend>配送先住所</legend>
+
+    <!-- 郵便番号 -->
+    <label for="shipping-postal-code">郵便番号</label>
+    <input
+      type="text"
+      id="shipping-postal-code"
+      name="shipping-postal-code"
+      inputmode="numeric"
+      autocomplete="shipping postal-code"
+    />
+
+    <!-- 都道府県 -->
+    <label for="shipping-region">都道府県</label>
+    <input
+      type="text"
+      id="shipping-region"
+      name="shipping-region"
+      autocomplete="shipping address-level1"
+    />
+
+    <!-- 市区町村 -->
+    <label for="shipping-locality">市区町村</label>
+    <input
+      type="text"
+      id="shipping-locality"
+      name="shipping-locality"
+      autocomplete="shipping address-level2"
+    />
+
+    <!-- 番地 -->
+    <label for="shipping-street">番地</label>
+    <input
+      type="text"
+      id="shipping-street"
+      name="shipping-street"
+      autocomplete="shipping street-address"
+    />
+  </fieldset>
+
+  <!-- 請求先住所 -->
+  <fieldset>
+    <legend>請求先住所</legend>
+
+    <!-- 郵便番号 -->
+    <label for="billing-postal-code">郵便番号</label>
+    <input
+      type="text"
+      id="billing-postal-code"
+      name="billing-postal-code"
+      inputmode="numeric"
+      autocomplete="billing postal-code"
+    />
+
+    <!-- 都道府県 -->
+    <label for="billing-region">都道府県</label>
+    <input
+      type="text"
+      id="billing-region"
+      name="billing-region"
+      autocomplete="billing address-level1"
+    />
+
+    <!-- 市区町村 -->
+    <label for="billing-locality">市区町村</label>
+    <input
+      type="text"
+      id="billing-locality"
+      name="billing-locality"
+      autocomplete="billing address-level2"
+    />
+
+    <!-- 番地 -->
+    <label for="billing-street">番地</label>
+    <input
+      type="text"
+      id="billing-street"
+      name="billing-street"
+      autocomplete="billing street-address"
+    />
+  </fieldset>
+
+
+  <input type="submit" value="送信">
+</form>
+
+<script src="./form.js"></script>
+
+</body>
+</html>

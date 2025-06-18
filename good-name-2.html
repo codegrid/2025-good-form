@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <style>
+    form {
+      display: grid;
+      grid-template-columns: [label] auto [input] 1fr;
+      gap: 10px;
+    }
+    label {
+      grid-column: label;
+      font-weight: bold;
+    }
+    input[type="text"] {
+      grid-column: input;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<form>
+
+  <!-- 姓（Family Name） -->
+  <label for="name">名前</label>
+  <input
+    type="text"
+    id="name"
+    name="name"
+    autocomplete="name"
+  />
+
+
+  <input type="submit" value="送信">
+</form>
+
+<script src="./form.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <style>
+    fieldset {
+      display: grid;
+      grid-template-columns: [label] auto [input] 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    label {
+      grid-column: label;
+      font-weight: bold;
+    }
+    input {
+      grid-column: input;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<form>
+
+
+  <!-- ① tel：電話番号（国番号含む or 含まない、一般的な汎用） -->
+  <fieldset>
+    <legend>① 電話番号（tel）</legend>
+
+    <label for="tel">電話番号</label>
+    <input
+      type="tel"
+      id="tel"
+      name="tel"
+      inputmode="tel"
+      autocomplete="tel"
+    />
+  </fieldset>
+
+  <!-- ② tel-national：国番号を含まない電話番号 -->
+  <fieldset>
+    <legend>② 電話番号（tel-national）</legend>
+
+    <label for="tel-national">電話番号（国番号を除く）</label>
+    <input
+      type="tel"
+      id="tel-national"
+      name="tel-national"
+      inputmode="tel"
+      autocomplete="tel-national"
+    />
+  </fieldset>
+
+  <button>送信</button>
+</form>
+
+<script src="./form.js"></script>
+
+</body>
+</html>

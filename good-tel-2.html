@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <style>
+    fieldset {
+      display: grid;
+      grid-template-columns: [label] auto [input] 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    label {
+      grid-column: label;
+      font-weight: bold;
+    }
+    input {
+      grid-column: input;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<form>
+
+
+  <!-- ① 国番号 + その他の番号 + 内線番号 -->
+  <fieldset>
+    <legend>① 国番号 + 電話番号 + 内線</legend>
+
+    <label for="tel-country-code">国番号</label>
+    <input
+      type="tel"
+      id="tel-country-code"
+      name="tel-country-code"
+      inputmode="tel"
+      autocomplete="tel-country-code"
+    />
+
+    <label for="tel-national">電話番号（国番号を除く）</label>
+    <input
+      type="tel"
+      id="tel-national"
+      name="tel-national"
+      inputmode="tel"
+      autocomplete="tel-national"
+    />
+
+    <label for="tel-extension1">内線番号</label>
+    <input
+      type="tel"
+      id="tel-extension1"
+      name="tel-extension1"
+      inputmode="numeric"
+      autocomplete="tel-extension"
+    />
+  </fieldset>
+
+  <!-- ② 市外局番 + 電話番号 + 内線 -->
+  <fieldset>
+    <legend>② 市外局番 + 電話番号 + 内線</legend>
+
+    <label for="tel-area-code">市外局番</label>
+    <input
+      type="tel"
+      id="tel-area-code"
+      name="tel-area-code"
+      inputmode="tel"
+      autocomplete="tel-area-code"
+    />
+
+    <label for="tel-local2">電話番号（市外局番を除く）</label>
+    <input
+      type="tel"
+      id="tel-local2"
+      name="tel-local2"
+      inputmode="tel"
+      autocomplete="tel-local"
+    />
+
+    <label for="tel-extension2">内線番号</label>
+    <input
+      type="tel"
+      id="tel-extension2"
+      name="tel-extension2"
+      inputmode="numeric"
+      autocomplete="tel-extension"
+    />
+  </fieldset>
+
+  <!-- ③ 市外局番 + 市内局番 + 入者番号 + 内線 -->
+  <fieldset>
+    <legend>③ 市外局番 + 市内局番 + 入者番号 + 内線</legend>
+
+    <label for="tel-area-code3">市外局番</label>
+    <input
+      type="tel"
+      id="tel-area-code3"
+      name="tel-area-code3"
+      inputmode="tel"
+      autocomplete="tel-area-code"
+    />
+
+    <label for="tel-local-prefix">市内局番</label>
+    <input
+      type="tel"
+      id="tel-local-prefix"
+      name="tel-local-prefix"
+      inputmode="tel"
+      autocomplete="tel-local-prefix"
+    />
+
+    <label for="tel-local-suffix">加入者番号</label>
+    <input
+      type="tel"
+      id="tel-local-suffix"
+      name="tel-local-suffix"
+      inputmode="tel"
+      autocomplete="tel-local-suffix"
+    />
+
+    <label for="tel-extension3">内線番号</label>
+    <input
+      type="tel"
+      id="tel-extension3"
+      name="tel-extension3"
+      inputmode="numeric"
+      autocomplete="tel-extension"
+    />
+  </fieldset>
+
+
+  <button>送信</button>
+</form>
+
+<script src="./form.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <style>
+    fieldset {
+      display: grid;
+      grid-template-columns: [label] auto [input] 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    label {
+      grid-column: label;
+      font-weight: bold;
+    }
+    input[type="text"] {
+      grid-column: input;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<form>
+
+  <!-- 分割された生年月日 -->
+  <fieldset>
+    <legend>生年月日（分割）</legend>
+
+    <!-- 年 -->
+    <label for="birth-year">年</label>
+    <input
+      type="text"
+      id="birth-year"
+      name="birth-year"
+      inputmode="numeric"
+      autocomplete="bday-year"
+    />
+
+    <!-- 月 -->
+    <label for="birth-month">月</label>
+    <input
+      type="text"
+      id="birth-month"
+      name="birth-month"
+      inputmode="numeric"
+      autocomplete="bday-month"
+    />
+
+    <!-- 日 -->
+    <label for="birth-day">日</label>
+    <input
+      type="text"
+      id="birth-day"
+      name="birth-day"
+      inputmode="numeric"
+      autocomplete="bday-day"
+    />
+  </fieldset>
+
+  <input type="submit" value="送信">
+</form>
+
+<script src="./form.js"></script>
+
+</body>
+</html>

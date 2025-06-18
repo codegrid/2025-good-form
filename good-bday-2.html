@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <style>
+    fieldset {
+      display: grid;
+      grid-template-columns: [label] auto [input] 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    label {
+      grid-column: label;
+      font-weight: bold;
+    }
+    input[type="date"] {
+      grid-column: input;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<form>
+
+  <!-- ② まとめた生年月日 -->
+  <fieldset>
+    <legend>生年月日（まとめて入力）</legend>
+
+    <label for="birthday">生年月日</label>
+    <input
+      type="date"
+      id="birthday"
+      name="birthday"
+      autocomplete="bday"
+    />
+  </fieldset>
+
+  <input type="submit" value="送信">
+</form>
+
+<script src="./form.js"></script>
+
+</body>
+</html>
